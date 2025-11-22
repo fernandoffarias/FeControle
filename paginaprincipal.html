@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FêControle - Página Principal</title>
+  <link rel="icon" type="image/png" href="_imagens/pagina-principal/favicon.png">
+  <link rel="stylesheet" href="_css/paginaprincipal.css">
+
+  <!-- Fonte opcional (Inter) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS da página principal -->
+  <link rel="stylesheet" href="_css/paginaprincipal.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <img src="_imagens/pagina-principal/logomarca.png" class="logo-img" alt="Logo FêControle">
+      <span class="logo-text">FÊCONTROLE</span>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <div class="user-info">
+      <span class="user-name">Olá, Fernando</span>
+      <span class="user-role">Administrador</span>
+    </div>
+    <div class="user-avatar">F</div>
+  </div>
+</header>
+
+  <div class="layout">
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="pagina-principal.html" class="menu-item ativo">Página principal</a>
+        <a href="produtos.html" class="menu-item">Produtos</a>
+        <a href="movimentacoes.html" class="menu-item">Movimentações</a>
+        <a href="repor.html" class="menu-item">Reposição</a>
+        <!-- Criatividade extra: Painel visual -->
+        <a href="saude-do-estoque.html" class="menu-item">Saúde do estoque</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+
+      <!-- Resumo em cards -->
+      <section class="cards-resumo">
+        <article class="card-resumo">
+          <div class="card-label">Total de produtos</div>
+          <div class="card-valor">42</div>
+          <div class="card-sub">itens cadastrados</div>
+        </article>
+
+        <article class="card-resumo card-alerta">
+          <div class="card-label">Estoque baixo</div>
+          <div class="card-valor">5</div>
+          <div class="card-sub">produtos precisam de reposição</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Entradas no mês</div>
+          <div class="card-valor">18</div>
+          <div class="card-sub">movimentações registradas</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Saídas no mês</div>
+          <div class="card-valor">12</div>
+          <div class="card-sub">movimentações registradas</div>
+        </article>
+      </section>
+
+      <!-- Últimas movimentações -->
+      <section class="bloco">
+        <header class="bloco-header">
+          <h2>Últimas movimentações</h2>
+          <a href="movimentacoes.html" class="link-acao">Ver todas</a>
+        </header>
+
+        <div class="tabela-wrapper">
+          <table class="tabela">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Produto</th>
+                <th>Tipo</th>
+                <th>Quantidade</th>
+                <th>Observação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20/11/2025</td>
+                <td>Notebook Dell 15"</td>
+                <td><span class="badge badge-entrada">Entrada</span></td>
+                <td>10</td>
+                <td>Reposição mensal</td>
+              </tr>
+              <tr>
+                <td>18/11/2025</td>
+                <td>Mouse óptico USB</td>
+                <td><span class="badge badge-saida">Saída</span></td>
+                <td>6</td>
+                <td>Uso interno – novos colaboradores</td>
+              </tr>
+              <tr>
+                <td>16/11/2025</td>
+                <td>Monitor 24" LED</td>
+                <td><span class="badge badge-entrada">Entrada</span></td>
+                <td>4</td>
+                <td>Lote recebido do fornecedor</td>
+              </tr>
+              <tr>
+                <td>15/11/2025</td>
+                <td>Headset com microfone</td>
+                <td><span class="badge badge-saida">Saída</span></td>
+                <td>3</td>
+                <td>Substituição de equipamentos</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- BLOCO CRIATIVO: Painel de Saúde do Estoque -->
+      <section class="bloco bloco-saude">
+        <header class="bloco-header">
+          <h2>Saúde do estoque</h2>
+          <span class="bloco-legenda">Visão geral do nível de estoque por categoria</span>
+        </header>
+
+        <div class="saude-grid">
+
+          <!-- Indicador tipo "semáforo" -->
+          <div class="saude-status">
+            <div class="status-bolinha status-verde"></div>
+            <div class="status-texto-principal">Estoque em nível saudável</div>
+            <div class="status-texto-secundario">
+              A maioria dos produtos está acima do nível mínimo configurado.
+            </div>
+          </div>
+
+          <!-- Barras por categoria -->
+          <div class="saude-barras">
+            <div class="barra-linha">
+              <div class="barra-info">
+                <span class="categoria">Notebooks</span>
+                <span class="percentual">80%</span>
+              </div>
+              <div class="barra">
+                <div class="barra-preenchimento" style="width: 80%;"></div>
+              </div>
+            </div>
+
+            <div class="barra-linha">
+              <div class="barra-info">
+                <span class="categoria">Monitores</span>
+                <span class="percentual">65%</span>
+              </div>
+              <div class="barra">
+                <div class="barra-preenchimento" style="width: 65%;"></div>
+              </div>
+            </div>
+
+            <div class="barra-linha">
+              <div class="barra-info">
+                <span class="categoria">Periféricos</span>
+                <span class="percentual">40%</span>
+              </div>
+              <div class="barra">
+                <div class="barra-preenchimento critico" style="width: 40%;"></div>
+              </div>
+            </div>
+
+            <div class="barra-linha">
+              <div class="barra-info">
+                <span class="categoria">Cabos &amp; acessórios</span>
+                <span class="percentual">55%</span>
+              </div>
+              <div class="barra">
+                <div class="barra-preenchimento atencao" style="width: 55%;"></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Produto mais crítico -->
+        <div class="critico-card">
+          <div class="critico-titulo">Produto mais crítico</div>
+          <div class="critico-nome">Mouse óptico USB</div>
+          <div class="critico-info">
+            <span>Estoque atual: 4 unidades</span>
+            <span>Estoque mínimo: 10 unidades</span>
+          </div>
+          <span class="badge badge-critico">Reposição urgente</span>
+        </div>
+
+      </section>
+
+    </main>
+  </div>
+  <script src="_javascript/paginaprincipal.js" defer></script>
+</body

@@ -1,0 +1,206 @@
+/* ======== RESET BÁSICO ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ======== CORES PADRÃO ======== */
+:root {
+  --bg-principal: #4FB9A6;      /* verde água-marinho */
+  --bg-card: #ffffff;
+  --bg-botao: #1f7b6e;
+  --bg-botao-hover: #186055;
+  --borda-input: #dcdfe3;
+  --texto-base: #2d3136;
+  --texto-suave: #6b7076;
+  --link: #1f7b6e;
+}
+
+/* ======== FUNDO GERAL ======== */
+body {
+  min-height: 100vh;
+  background: var(--bg-principal);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======== TOPO COM FRASE ======== */
+.faixa-topo {
+  width: 100%;
+  background: #ffffff;
+  padding: 12px 16px;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--texto-base);
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* ======== CONTAINER CENTRAL ======== */
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+}
+
+/* ======== CARD DE LOGIN ======== */
+.card-login {
+  width: 100%;
+  max-width: 380px;
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 32px 32px 28px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.18);
+  text-align: center;
+}
+
+/* título "Faça login" */
+.titulo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--texto-base);
+  margin-bottom: 24px;
+}
+
+/* ======== FORMULÁRIO ======== */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--texto-base);
+}
+
+.field input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--borda-input);
+  font-size: 0.95rem;
+  outline: none;
+  background: #f9fafb;
+}
+
+.field input::placeholder {
+  color: #a0a4aa;
+}
+
+/* botão Entrar */
+.btn-primary {
+  margin-top: 4px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--bg-botao);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.05s;
+}
+
+.btn-primary:hover {
+  background: var(--bg-botao-hover);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+/* ======== LINKS AUXILIARES ======== */
+.link-secundario {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  text-decoration: none;
+}
+
+.link-secundario:hover {
+  text-decoration: underline;
+}
+
+.texto-conta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+}
+
+.link-acao {
+  color: var(--link);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.link-acao:hover {
+  text-decoration: underline;
+}
+
+/* divisor */
+.divisor {
+  margin: 20px 0 10px;
+  border: none;
+  border-top: 1px solid #e3e6ea;
+}
+
+/* "Logar com" */
+.texto-logarcom {
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+  margin-bottom: 10px;
+}
+
+/* ======== BOTÕES GOOGLE / TOKEN ======== */
+.login-extras {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.login-social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid #e0e3e8;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: var(--texto-base);
+}
+
+.login-social img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* ======== RODAPÉ ======== */
+.rodape {
+  width: 100%;
+  background: #ffffff;
+  text-align: center;
+  padding: 12px 8px 16px;
+  font-size: 0.85rem;
+  color: #2f9b88;   /* verdinho do texto “FêControle+” */
+}
+
+.marca {
+  font-weight: 600;
+}

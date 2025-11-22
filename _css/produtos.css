@@ -1,0 +1,135 @@
+/* PÁGINA DE PRODUTOS    */
+.titulo-pagina {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.subtitulo-pagina {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.produtos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primario {
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(74, 160, 143, 0.35);
+  transition: background 0.15s ease, transform 0.1s ease,
+    box-shadow 0.15s ease;
+}
+
+.btn-primario:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(62, 139, 125, 0.4);
+}
+
+/* Filtros */
+
+.filtros {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.02);
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.5fr;
+  gap: 1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.campo label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.campo input,
+.campo select {
+  border-radius: 0.7rem;
+  border: 1px solid var(--border-soft);
+  padding: 0.45rem 0.7rem;
+  font-size: 0.85rem;
+  outline: none;
+  background: #f9fbfb;
+}
+
+.campo input:focus,
+.campo select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(74, 160, 143, 0.25);
+}
+
+/* Tabela de produtos: barra de estoque */
+
+.tabela-produtos td:nth-child(4),
+.tabela-produtos td:nth-child(5) {
+  text-align: center;
+}
+
+.estoque-barra {
+  width: 110px;
+  height: 8px;
+  border-radius: 999px;
+  background: #dde8e6;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.estoque-preenchimento {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease;
+}
+
+.nivel-ok {
+  background: linear-gradient(90deg, var(--accent-soft), var(--accent-dark));
+}
+
+.nivel-atencao {
+  background: linear-gradient(90deg, #f6d489, #f1b85b);
+}
+
+.nivel-critico {
+  background: linear-gradient(90deg, #f78a8a, #e15959);
+}
+
+/* Responsivo */
+
+@media (max-width: 900px) {
+  .filtros {
+    grid-template-columns: 1fr;
+  }
+
+  .produtos-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-primario {
+    align-self: stretch;
+    text-align: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
+

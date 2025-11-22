@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tela de login - FêControle</title>
+
+  <!-- CSS da tela de login -->
+  <link rel="stylesheet" href="_css/teladelogin.css">
+</head>
+<body>
+
+  <!-- faixa topo -->
+  <header class="faixa-topo">
+  Bem-vindo ao FêControle — Seu sistema interno de controle de estoque
+  </header>
+
+  <!-- conteúdo principal -->
+  <main class="container">
+    <section class="card-login">
+
+      <h1 class="titulo">Faça login</h1>
+
+      <form class="form" action="paginaprincipal.html" method="get">
+
+        <label class="field">
+          <span class="label">E-mail</span>
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="seu@exemplo.com">
+        </label>
+
+        <label class="field">
+          <span class="label">Senha</span>
+          <input
+            type="password"
+            name="senha"
+            required
+            placeholder="Senha">
+        </label>
+
+        <button class="btn-primary" type="submit">
+          Entrar
+        </button>
+
+      </form>
+
+      <a href="#" class="link-secundario">
+        Esqueceu sua senha?
+      </a>
+
+      <p class="texto-conta">
+        Não tem uma conta?
+        <a href="#" class="link-acao">Cadastre-se</a>
+      </p>
+
+      <hr class="divisor">
+
+      <p class="texto-logarcom">Logar com</p>
+
+      <div class="login-extras">
+        <button class="login-social">
+          <img src="_imagens/tela-de-login/google.png" alt="Logo Google">
+          <span>Gmail</span>
+        </button>
+
+        <button class="login-social">
+          <img src="_imagens/tela-de-login/token.png" alt="Ícone de token">
+          <span>Token de validação</span>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- rodapé -->
+  <footer class="rodape">
+    © 2025 <span class="marca">FêControle</span> Todos os direitos reservados
+  </footer>
+
+</body>
+</html>

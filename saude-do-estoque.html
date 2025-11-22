@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FêControle - Saúde do estoque</title>
+  <link rel="icon" type="image/png" href="_imagens/pagina-principal/favicon.png">
+  <link rel="stylesheet" href="_css/paginaprincipal.css">
+  <link rel="stylesheet" href="_css/saude-do-estoque.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS específico da página de saúde -->
+  <link rel="stylesheet" href="_css/saude-do-estoque.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <img src="_imagens/pagina-principal/logomarca.png" class="logo-img" alt="Logo FêControle">
+      <span class="logo-text">FÊCONTROLE</span>
+    </div>
+  </div>
+
+    <div class="topbar-right">
+      <div class="user-info">
+        <div class="user-name">Olá, Fernando</div>
+        <div class="user-role">Administrador</div>
+      </div>
+      <div class="user-avatar">F</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="paginaprincipal.html" class="menu-item">Página principal</a>
+        <a href="produtos.html" class="menu-item">Produtos</a>
+        <a href="movimentacoes.html" class="menu-item">Movimentações</a>
+        <a href="repor.html" class="menu-item">Reposição</a>
+        <a href="saude-do-estoque.html" class="menu-item ativo">Saúde do estoque</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+
+      <!-- Cabeçalho -->
+      <section class="saude-header">
+        <div>
+          <h1 class="titulo-pagina">Saúde do estoque</h1>
+          <p class="subtitulo-pagina">
+            Visão analítica do estoque por categoria, destacando pontos críticos e prioridades de reposição.
+          </p>
+        </div>
+      </section>
+
+      <!-- Linha 1: visão geral -->
+      <section class="saude-top-grid">
+        <article class="bloco saude-gauge">
+          <h2>Visão geral</h2>
+          <div class="gauge-wrapper">
+            <div class="gauge-circle">
+              <div class="gauge-interno">
+                <span id="gauge-percentual">0%</span>
+                <small>nível geral</small>
+              </div>
+            </div>
+            <div class="gauge-textos">
+              <div class="gauge-status" id="gauge-status-label">Calculando...</div>
+              <p class="gauge-desc" id="gauge-status-desc">
+                Aguarde, estamos analisando o estoque.
+              </p>
+              <ul class="gauge-lista">
+                <li><span class="bolinha bolinha-normal"></span> Produtos em nível saudável: <strong id="qtd-normais">0</strong></li>
+                <li><span class="bolinha bolinha-alerta"></span> Estoque baixo: <strong id="qtd-baixos">0</strong></li>
+                <li><span class="bolinha bolinha-critico"></span> Nível crítico: <strong id="qtd-criticos">0</strong></li>
+              </ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="bloco saude-resumo">
+          <header class="bloco-header">
+            <h2>Resumo numérico</h2>
+          </header>
+          <div class="cards-resumo">
+            <div class="card-resumo">
+              <div class="card-label">Produtos monitorados</div>
+              <div class="card-valor" id="saude-total-produtos">0</div>
+              <div class="card-sub">itens diferentes no estoque</div>
+            </div>
+            <div class="card-resumo">
+              <div class="card-label">Categorias</div>
+              <div class="card-valor" id="saude-total-categorias">0</div>
+              <div class="card-sub">grupos macro de estoque</div>
+            </div>
+            <div class="card-resumo">
+              <div class="card-label">Cobertura média</div>
+              <div class="card-valor" id="saude-cobertura-media">0%</div>
+              <div class="card-sub">relação estoque / mínimo</div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Linha 2: saúde por categoria -->
+      <section class="bloco">
+        <header class="bloco-header">
+          <h2>Saúde por categoria</h2>
+          <span class="bloco-legenda">
+            Cobertura de estoque em cada categoria principal da empresa.
+          </span>
+        </header>
+
+        <div class="saude-categorias-grid">
+          <!-- Cada card de categoria tem data-cat para o JS identificar -->
+          <article class="cat-card" data-cat="Hardware">
+            <h3>Hardware</h3>
+            <p>Componentes físicos e peças internas.</p>
+            <div class="cat-barra">
+              <div class="cat-barra-preenchimento" id="barra-hardware"></div>
+            </div>
+            <div class="cat-info">
+              <span class="cat-percentual" id="pct-hardware">0%</span>
+              <span class="cat-label" id="label-hardware">Analisando...</span>
+            </div>
+          </article>
+
+          <article class="cat-card" data-cat="Equipamentos de Informática">
+            <h3>Equipamentos de Informática</h3>
+            <p>Computadores, impressoras, notebooks e afins.</p>
+            <div class="cat-barra">
+              <div class="cat-barra-preenchimento" id="barra-equip"></div>
+            </div>
+            <div class="cat-info">
+              <span class="cat-percentual" id="pct-equip">0%</span>
+              <span class="cat-label" id="label-equip">Analisando...</span>
+            </div>
+          </article>
+
+          <article class="cat-card" data-cat="Periféricos">
+            <h3>Periféricos</h3>
+            <p>Entrada, áudio, suportes e acessórios próximos ao usuário.</p>
+            <div class="cat-barra">
+              <div class="cat-barra-preenchimento" id="barra-perif"></div>
+            </div>
+            <div class="cat-info">
+              <span class="cat-percentual" id="pct-perif">0%</span>
+              <span class="cat-label" id="label-perif">Analisando...</span>
+            </div>
+          </article>
+
+          <article class="cat-card" data-cat="Redes e Conectividade">
+            <h3>Redes e Conectividade</h3>
+            <p>Infraestrutura de rede, roteadores, modems e repetidores.</p>
+            <div class="cat-barra">
+              <div class="cat-barra-preenchimento" id="barra-redes"></div>
+            </div>
+            <div class="cat-info">
+              <span class="cat-percentual" id="pct-redes">0%</span>
+              <span class="cat-label" id="label-redes">Analisando...</span>
+            </div>
+          </article>
+
+          <article class="cat-card" data-cat="Acessórios Gerais">
+            <h3>Acessórios Gerais</h3>
+            <p>Itens de apoio como estabilizadores e filtros de linha.</p>
+            <div class="cat-barra">
+              <div class="cat-barra-preenchimento" id="barra-acess"></div>
+            </div>
+            <div class="cat-info">
+              <span class="cat-percentual" id="pct-acess">0%</span>
+              <span class="cat-label" id="label-acess">Analisando...</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Linha 3: ranking de produtos críticos -->
+      <section class="bloco">
+        <header class="bloco-header">
+          <h2>Ranking de produtos mais críticos</h2>
+          <span class="bloco-legenda">
+            Itens com menor relação entre estoque atual e mínimo configurado.
+          </span>
+        </header>
+
+        <div class="tabela-wrapper">
+          <table class="tabela tabela-ranking">
+            <thead>
+              <tr>
+                <th>Posição</th>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Grupo</th>
+                <th>Qtd. atual</th>
+                <th>Qtd. mínima</th>
+                <th>Relação</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-ranking">
+              <!-- preenchido via JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JavaScript da página de saúde -->
+  <script src="_javascript/saude-do-estoque.js" defer></script>
+</body>
+</html>

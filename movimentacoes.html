@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FêControle - Página Principal</title>
+  <link rel="icon" type="image/png" href="_imagens/pagina-principal/favicon.png">
+  <link rel="stylesheet" href="_css/paginaprincipal.css">
+  <link rel="stylesheet" href="_css/movimentacoes.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS base -->
+  <link rel="stylesheet" href="_css/movimentacoes.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <img src="_imagens/pagina-principal/logomarca.png" class="logo-img" alt="Logo FêControle">
+      <span class="logo-text">FÊCONTROLE</span>
+    </div>
+  </div>
+
+    <div class="topbar-right">
+      <div class="user-info">
+        <div class="user-name">Olá, Fernando</div>
+        <div class="user-role">Administrador</div>
+      </div>
+      <div class="user-avatar">F</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="paginaprincipal.html" class="menu-item">Página principal</a>
+        <a href="produtos.html" class="menu-item">Produtos</a>
+        <a href="movimentacoes.html" class="menu-item ativo">Movimentações</a>
+        <a href="repor.html" class="menu-item">Reposição</a>
+        <a href="saude-do-estoque.html" class="menu-item">Saúde do estoque</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+
+      <!-- Cabeçalho -->
+      <section class="mov-header">
+        <div>
+          <h1 class="titulo-pagina">Movimentações de estoque</h1>
+          <p class="subtitulo-pagina">
+            Registre entradas e saídas de produtos e acompanhe o histórico.
+          </p>
+        </div>
+      </section>
+
+      <!-- Cards resumo -->
+      <section class="cards-resumo mov-cards">
+        <article class="card-resumo">
+          <div class="card-label">Entradas no mês</div>
+          <div class="card-valor" id="total-entradas">0</div>
+          <div class="card-sub">movimentações registradas</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Saídas no mês</div>
+          <div class="card-valor" id="total-saidas">0</div>
+          <div class="card-sub">movimentações registradas</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Saldo de movimentações</div>
+          <div class="card-valor" id="saldo-mov">0</div>
+          <div class="card-sub">entradas – saídas (em quantidade)</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Última atualização</div>
+          <div class="card-valor" id="ultima-data">—</div>
+          <div class="card-sub">data da última movimentação</div>
+        </article>
+      </section>
+
+      <!-- Formulário + tabela -->
+      <section class="mov-grid">
+
+        <!-- Formulário de registro -->
+        <section class="bloco mov-form">
+          <header class="bloco-header">
+            <h2>Registrar movimentação</h2>
+            <span class="bloco-legenda">Preencha os dados e clique em salvar.</span>
+          </header>
+
+          <form id="form-movimentacao" class="form-mov">
+            <div class="campo">
+              <label for="data">Data</label>
+              <input type="date" id="data" required>
+            </div>
+
+            <div class="campo">
+              <label for="produto">Produto</label>
+              <select id="produto" required>
+                <option value="">Selecione um produto</option>
+                <!-- Mesmos nomes usados na página de produtos -->
+                <option>Cabo HDMI</option>
+                <option>Cabo USB-C</option>
+                <option>Cabo de Rede RJ-45</option>
+                <option>Cabo de Força</option>
+                <option>Fonte 500W</option>
+                <option>Fonte Modular</option>
+                <option>Memória RAM 8GB</option>
+                <option>Memória RAM 16GB</option>
+                <option>Monitor 24"</option>
+                <option>Monitor 27"</option>
+                <option>Placa de Rede</option>
+                <option>Placa de Som</option>
+                <option>Placa de Vídeo</option>
+                <option>Teclado Mecânico</option>
+                <option>Teclado Semi-mecânico</option>
+                <option>Teclado Wireless</option>
+                <option>Desktop Completo</option>
+                <option>PC Gamer</option>
+                <option>Impressora a Laser</option>
+                <option>Impressora Multifuncional</option>
+                <option>Notebook Dell</option>
+                <option>Notebook HP</option>
+                <option>Notebook Lenovo</option>
+                <option>Caixas de Som</option>
+                <option>Headset USB</option>
+                <option>Mouse Gamer</option>
+                <option>Mouse Óptico</option>
+                <option>Suporte para Notebook</option>
+                <option>Suporte para Monitor</option>
+                <option>Modem</option>
+                <option>Repetidor Wi-Fi</option>
+                <option>Roteador</option>
+                <option>Carregador de Notebook</option>
+                <option>Estabilizador</option>
+                <o

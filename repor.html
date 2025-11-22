@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FêControle - Reposição</title>
+  <link rel="icon" type="image/png" href="_imagens/pagina-principal/favicon.png">
+  <link rel="stylesheet" href="_css/paginaprincipal.css">
+  <link rel="stylesheet" href="_css/repor.css">
+
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS específico da página de reposição -->
+  <link rel="stylesheet" href="_css/repor.css">
+</head>
+<body>
+
+  <!-- Barra superior -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">
+      <img src="_imagens/pagina-principal/logomarca.png" class="logo-img" alt="Logo FêControle">
+      <span class="logo-text">FÊCONTROLE</span>
+    </div>
+  </div>
+
+    <div class="topbar-right">
+      <div class="user-info">
+        <div class="user-name">Olá, Fernando</div>
+        <div class="user-role">Administrador</div>
+      </div>
+      <div class="user-avatar">F</div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <!-- Menu lateral -->
+    <aside class="sidebar">
+      <nav class="menu">
+        <a href="paginaprincipal.html" class="menu-item">Página principal</a>
+        <a href="produtos.html" class="menu-item">Produtos</a>
+        <a href="movimentacoes.html" class="menu-item">Movimentações</a>
+        <a href="repor.html" class="menu-item ativo">Reposição</a>
+        <a href="saude-do-estoque.html" class="menu-item">Saúde do estoque</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <main class="content">
+
+      <!-- Cabeçalho -->
+      <section class="repo-header">
+        <div>
+          <h1 class="titulo-pagina">Reposição de estoque</h1>
+          <p class="subtitulo-pagina">
+            Visualize apenas os produtos com estoque baixo ou em nível crítico e veja a sugestão de compra.
+          </p>
+        </div>
+      </section>
+
+      <!-- Cards resumo -->
+      <section class="cards-resumo repo-cards">
+        <article class="card-resumo">
+          <div class="card-label">Produtos monitorados</div>
+          <div class="card-valor" id="repo-total-monitorados">0</div>
+          <div class="card-sub">itens cadastrados no sistema</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Estoque baixo</div>
+          <div class="card-valor" id="repo-total-baixo">0</div>
+          <div class="card-sub">produtos abaixo do ideal</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Reposição urgente</div>
+          <div class="card-valor" id="repo-total-urgente">0</div>
+          <div class="card-sub">produtos em nível crítico</div>
+        </article>
+
+        <article class="card-resumo">
+          <div class="card-label">Sugestão total</div>
+          <div class="card-valor" id="repo-total-sugestao">0</div>
+          <div class="card-sub">unidades sugeridas para compra</div>
+        </article>
+      </section>
+
+      <!-- Filtros -->
+      <section class="bloco repo-filtros">
+        <header class="bloco-header">
+          <h2>Filtros</h2>
+          <span class="bloco-legenda">Refine a lista de produtos que precisam de reposição.</span>
+        </header>
+
+        <div class="repo-filtros-grid">
+          <div class="campo">
+            <label for="repo-busca">Buscar produto</label>
+            <input id="repo-busca" type="text" placeholder="Digite o nome do produto">
+          </div>
+
+          <div class="campo">
+            <label for="repo-categoria">Categoria</label>
+            <select id="repo-categoria">
+              <option value="todos">Todas</option>
+              <option value="Hardware">Hardware</option>
+              <option value="Equipamentos de Informática">Equipamentos de Informática</option>
+              <option value="Periféricos">Periféricos</option>
+              <option value="Redes e Conectividade">Redes e Conectividade</option>
+              <option value="Acessórios Gerais">Acessórios Gerais</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label for="repo-prioridade">Prioridade</label>
+            <select id="repo-prioridade">
+              <option value="todas">Todas</option>
+              <option value="baixo">Estoque baixo</option>
+              <option value="critico">Reposição urgente</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tabela de reposição -->
+      <section class="bloco">
+        <header class="bloco-header">
+          <h2>Produtos que precisam de reposição</h2>
+          <span class="bloco-legenda">
+            Exibindo apenas itens com estoque baixo ou em nível crítico, com sugestão de quantidade para compra.
+          </span>
+        </header>
+
+        <div class="tabela-wrapper">
+          <table class="tabela tabela-reposicao">
+            <thead>
+              <tr>
+                <th>Produto</th>
+                <th>Categoria</th>
+                <th>Grupo</th>
+                <th>Qtd. atual</th>
+                <th>Qtd. mínima</th>
+                <th>Situação</th>
+                <th>Sugestão de compra</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-reposicao">
+              <!-- preenchido via JavaScript -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- JavaScript da página de reposição -->
+  <script src="_javascript/repor.js" defer></script>
+</body>
+</html>
