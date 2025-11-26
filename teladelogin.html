@@ -23,24 +23,16 @@
 
       <form class="form" action="paginaprincipal.html" method="get">
 
-        <label class="field">
-          <span class="label">E-mail</span>
-          <input
-            type="email"
-            name="email"
-            required
-            placeholder="seu@exemplo.com">
-        </label>
+      <div class="field">
+        <label for="email" class="label">E-mail</label>
+        <input id="email" name="email" type="email" required placeholder="seu@exemplo.com">
+      </div>
 
-        <label class="field">
-          <span class="label">Senha</span>
-          <input
-            type="password"
-            name="senha"
-            required
-            placeholder="Senha">
-        </label>
-
+      <div class="field">
+        <label for="senha" class="label">Senha</label>
+        <input id="senha" name="senha" type="password" required placeholder="Senha">
+      </div>
+      
         <button class="btn-primary" type="submit">
           Entrar
         </button>
