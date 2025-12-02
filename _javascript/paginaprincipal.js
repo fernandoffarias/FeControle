@@ -68,7 +68,7 @@ const produtos = [
 
   // Monitores
   {
-    nome: 'Monitor 24"',
+    nome: 'Monitor 24" LED',
     categoria: "Hardware",
     grupo: "Monitores",
     qtdAtual: 9,
@@ -161,14 +161,15 @@ const produtos = [
     qtdMinima: 3
   },
 
-  // Laptops
-  {
-    nome: "Notebook Dell",
-    categoria: "Equipamentos de Informática",
-    grupo: "Laptops",
-    qtdAtual: 6,
-    qtdMinima: 8
-  },
+// Laptops
+{
+  nome: 'Notebook Dell 15"',
+  categoria: "Equipamentos de Informática",
+  grupo: "Laptops",
+  qtdAtual: 6,
+  qtdMinima: 8
+},
+
   {
     nome: "Notebook HP",
     categoria: "Equipamentos de Informática",
@@ -194,7 +195,7 @@ const produtos = [
     qtdMinima: 5
   },
   {
-    nome: "Headset USB",
+    nome: "Headset com microfone",
     categoria: "Periféricos",
     grupo: "Áudio",
     qtdAtual: 15,
@@ -210,7 +211,7 @@ const produtos = [
     qtdMinima: 8
   },
   {
-    nome: "Mouse Óptico",
+    nome: "Mouse óptico USB",
     categoria: "Periféricos",
     grupo: "Entrada",
     qtdAtual: 12,
@@ -288,25 +289,25 @@ const produtos = [
 const movimentacoes = [
   {
     data: "2025-11-20",
-    produto: "Notebook Dell",
+    produto: 'Notebook Dell 15"',
     tipo: "Entrada",
     quantidade: 10
   },
   {
     data: "2025-11-18",
-    produto: "Mouse Óptico",
+    produto: "Mouse óptico USB",
     tipo: "Saída",
     quantidade: 6
   },
   {
     data: "2025-11-16",
-    produto: 'Monitor 24"',
+    produto: 'Monitor 24" LED',
     tipo: "Entrada",
     quantidade: 4
   },
   {
     data: "2025-11-15",
-    produto: "Headset USB",
+    produto: "Headset com microfone",
     tipo: "Saída",
     quantidade: 3
   }
@@ -411,6 +412,8 @@ function atualizarSaudeEstoque() {
   const textoPrincipal = document.querySelector(".status-texto-principal");
   const textoSecundario = document.querySelector(".status-texto-secundario");
 
+  // Proteção para evitar erros se a seção não existir
+  if (!textoPrincipal || !textoSecundario) return;
   let normais = 0;
   let criticouBaixo = 0;
 

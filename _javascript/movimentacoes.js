@@ -4,28 +4,28 @@
 let movimentacoes = [
   {
     data: "2025-11-20",
-    produto: "Notebook Dell",
+    produto: 'Notebook Dell 15"',
     tipo: "Entrada",
     quantidade: 10,
     observacao: "Reposição mensal"
   },
   {
     data: "2025-11-18",
-    produto: "Mouse Óptico",
+    produto: "Mouse óptico USB",
     tipo: "Saída",
     quantidade: 6,
     observacao: "Uso interno – novos colaboradores"
   },
   {
     data: "2025-11-16",
-    produto: 'Monitor 24"',
+    produto: 'Monitor 24" LED',
     tipo: "Entrada",
     quantidade: 4,
     observacao: "Lote recebido do fornecedor"
   },
   {
     data: "2025-11-15",
-    produto: "Headset USB",
+    produto: "Headset com microfone",
     tipo: "Saída",
     quantidade: 3,
     observacao: "Substituição de equipamentos"

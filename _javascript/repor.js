@@ -69,7 +69,7 @@ const produtosReposicao = [
 
   // Monitores
   {
-    nome: 'Monitor 24"',
+    nome: 'Monitor 24" LED',
     categoria: "Hardware",
     grupo: "Monitores",
     qtdAtual: 9,
@@ -164,7 +164,7 @@ const produtosReposicao = [
 
   // Laptops
   {
-    nome: "Notebook Dell",
+    nome: 'Notebook Dell 15" ',
     categoria: "Equipamentos de Informática",
     grupo: "Laptops",
     qtdAtual: 6,
@@ -195,7 +195,7 @@ const produtosReposicao = [
     qtdMinima: 5
   },
   {
-    nome: "Headset USB",
+    nome: "Headset com micrfone",
     categoria: "Periféricos",
     grupo: "Áudio",
     qtdAtual: 15,
@@ -211,7 +211,7 @@ const produtosReposicao = [
     qtdMinima: 8
   },
   {
-    nome: "Mouse Óptico",
+    nome: "Mouse óptico USB",
     categoria: "Periféricos",
     grupo: "Entrada",
     qtdAtual: 12,

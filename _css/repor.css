@@ -53,20 +53,6 @@ body {
   gap: 0.6rem;
 }
 
-.logo-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 0.9rem;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
-}
-
 .logo-text {
   font-weight: 700;
   font-size: 1.05rem;

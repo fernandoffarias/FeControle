@@ -471,6 +471,6 @@ body {
   }
 
   .logo-text {
-    display: none; /* deixa só o ícone TS em telas bem pequenas */
+    display: none; /* deixa só o ícone FC em telas bem pequenas */
   }
 }

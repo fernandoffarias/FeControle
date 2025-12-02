@@ -70,7 +70,7 @@ const produtos = [
 
   // Monitores
   {
-    nome: 'Monitor 24"',
+    nome: 'Monitor 24" LED',
     categoria: "Hardware",
     grupo: "Monitores",
     qtdAtual: 9,
@@ -165,7 +165,7 @@ const produtos = [
 
   // Laptops
   {
-    nome: "Notebook Dell",
+    nome: 'Notebook Dell 15" ',
     categoria: "Equipamentos de Informática",
     grupo: "Laptops",
     qtdAtual: 6,
@@ -196,7 +196,7 @@ const produtos = [
     qtdMinima: 5
   },
   {
-    nome: "Headset USB",
+    nome: "Headset com microfone",
     categoria: "Periféricos",
     grupo: "Áudio",
     qtdAtual: 15,
@@ -212,7 +212,7 @@ const produtos = [
     qtdMinima: 8
   },
   {
-    nome: "Mouse Óptico",
+    nome: "Mouse óptico USB",
     categoria: "Periféricos",
     grupo: "Entrada",
     qtdAtual: 12,
@@ -385,16 +385,17 @@ function renderizarProdutos() {
     barra.className =
       "estoque-preenchimento " + obterClasseBarra(nivel);
 
-    let percentual = (produto.qtdAtual / produto.qtdMinima) * 100;
+    let percentual = produto.qtdMinima > 0
+      ? (produto.qtdAtual / produto.qtdMinima) * 100
+      : 0;
     if (percentual > 100) percentual = 100;
     if (percentual < 0) percentual = 0;
     barra.style.width = percentual + "%";
 
     barraWrapper.appendChild(barra);
-    tdBarra.appendChild(barra);
-
     tdBarra.innerHTML = "";
     tdBarra.appendChild(barraWrapper);
+
 
     // Status
     const tdStatus = document.createElement("td");
